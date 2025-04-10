@@ -1,0 +1,45 @@
+Docker is an open-source platform used to automate the deployment of applications inside containers.
+A container is a lightweight, portable unit that includes the application code, libraries, and dependencies.
+Docker ensures the app runs the same in any environment, making development, testing, and deployment faster and easier
+A container is a self-contained environment where your app runs the same way on any machine.
+docker build -t myimage .  //creates image 
+
+docker run -p 8081:8081 myimage  //creates container of myimage and runs on port 8081
+docker ps -a //shows all containers
+docker stop containerName
+docker start containerName
+docker kill containerName   //It immediately stops a running Docker container
+
+
+
+docker pull <image>
+docker build -t <name> .
+docker run <image>
+docker run -it <image>
+docker stop <container>
+docker start <container>
+
+
+docker ps	//Show running containers
+docker ps -a	//Show all containers (including stopped)
+docker images	//List all downloaded images
+docker logs <container>	//View logs of a container
+docker inspect <container/image>	//Detailed info about a container or image
+
+
+docker rm <container>	Remove a container
+docker rmi <image>	Remove an image
+
+
+docker login
+docker tag myimage dockerUserName/myimage
+docker push dockerUserName/myimage
+
+
+
+docker pull dockerUserName/myimage //it lets you download a Docker image from Docker Hub (or another registry) to your local machine.
+
+//After pulling to use
+
+docker run -it dockerUserName/myimage
+docker run -p 8081:8081 dockerUserName/myimage
